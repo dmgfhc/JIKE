@@ -1,0 +1,133 @@
+
+// 将normalize.less引入
+@import 'normalize.less';
+
+// 适配方案
+@import 'adapt.less';
+
+// 字体文件
+@import 'font.less';
+
+// 引入混合
+@import 'mixins.less';
+
+body, ul, dl, dt, dd, h3, h4, h5, p {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "Arial";
+	background-color: #f7f4f1;
+}
+
+img {
+	width: 100%;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+// 最外层盒子
+.viewport {
+	width: 20rem;
+	margin: 0 auto;
+}
+
+// 主体
+.container {
+	padding: 0 0.75rem;
+	
+	// 标题
+	.title {
+		line-height: 1;
+		margin: 0.875rem 0 1rem;
+		font-size: (28rem / 32);
+		overflow: hidden;
+
+		h3 {
+			float: left;
+		}
+
+		span {
+			float: right;
+			color: #888;
+		}
+	}
+
+	.item {
+		margin-bottom: (28rem / 32);
+		overflow: hidden;
+		
+		// 除add以外 & 代表.item
+		&:not(.add) {
+			.border-radius(12rem / 32);
+		}
+
+		.body {
+			height: (224rem / 32);
+			background-color: #55bc75;
+		}
+
+		.act {
+			height: (86rem / 32);
+			padding: (18rem / 32 );
+			background-color: pink;
+			display: flex;
+			.box-sizing;
+
+			a {
+				flex: 1;
+				line-height: (50rem / 32);
+				text-align: center;
+				border-right: 1px solid #CCC;
+
+				&:last-child {
+					border-right: 0 none;
+				}
+			}
+		}
+	}
+
+	.add {
+		height: (220rem / 32);
+		text-align: center;
+		border: (3rem / 32) dashed #dedede;
+		background-color: #FFF;
+		padding-top: (36rem / 32);
+		.box-sizing;
+		
+		a {
+			display: inline-block;
+			margin: 0 auto;
+			font-size: (100rem / 32);
+			color: #aeaeae;
+		}
+
+		span {
+			line-height: 1;
+			margin-top: (12rem / 32);
+			display: block;
+			font-size: (26rem / 32);
+		}
+	}
+
+	// 其它信息
+	.extra {
+		position: absolute;
+		bottom: (120rem / 32);
+		line-height: 1.25rem;
+		font-size: (24rem / 32);
+		color: #999;
+	}
+}

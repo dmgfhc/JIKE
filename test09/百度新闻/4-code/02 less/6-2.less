@@ -1,0 +1,19 @@
+
+.box-sizing() {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.border-radius(@radius: 5px) {
+	border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+}
+
+body {
+	.box-sizing;
+
+	// .border-radius(15px);
+	.border-radius(20px);
+}

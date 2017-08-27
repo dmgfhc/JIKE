@@ -1,0 +1,10 @@
+.header {
+  height: 40px;
+}
+.header nav {
+  overflow: hidden;
+}
+.header a {
+  color: red;
+  float: left;
+}
