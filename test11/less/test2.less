@@ -1,0 +1,397 @@
+//背景色
+@bodyColor: #f5f5f5;
+//列头a,i h3标签
+.header-aih3 {
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    font-family: Verdana, "Lantinghei SC", "Hiragino Sans GB", "Microsoft Yahei", Helvetica, arial, \5b8b\4f53, sans-serif;
+}
+
+
+/*NAV区域三角形效果*/
+
+@keyframes arrow_animation {
+    0% {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+    }
+    70% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+    }
+    99% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+    }
+}
+
+body {
+    background: @bodyColor;
+}
+
+
+/*列头*/
+
+.header {
+    height: 60px;
+    line-height: 60px;
+    background: #fff;
+    .nav {
+        position: relative;
+        height: 60px;
+        width: 1000px;
+        margin: 0 auto;
+        /*标签样式*/
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        .nav-left {
+            /*NAV职业学院标签样式*/
+            .school-list {
+                position: absolute;
+                z-index: 1000;
+                top: 62px;
+                left: 242px;
+                a {
+                    display: block;
+                    height: 30px;
+                    line-height: 30px;
+                    padding: 0 15px;
+                }
+                i {
+                    background-size: 64px 64px;
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block;
+                    margin-right: 10px !important;
+                }
+                i.web-icon {
+                    background: url(../images/allicon.png) 0 0 no-repeat;
+                    background-size: 64px 64px;
+                    background-position: -15px -27px;
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block;
+                    margin-right: 10px !important;
+                }
+                i.android-icon {
+                    background: url(../images/allicon4.png) 0 0 no-repeat;
+                    background-position: 0 -61px;
+                    background-size: 16px 148px;
+                }
+                i.python-icon {
+                    background: url(../images/allicon4.png) 0 0 no-repeat;
+                    background-position: 0 0;
+                    background-size: 16px 148px;
+                }
+                i.go-icon {
+                    background: url(../images/allicon4.png) 0 0 no-repeat;
+                    background-position: 0 -38px;
+                    background-size: 16px 148px;
+                }
+                i.ios-icon {
+                    background: url(../images/allicon4.png) 0 0 no-repeat;
+                    background-position: 0 -81px;
+                    background-size: 16px 148px;
+                }
+            }
+            .vip-lesson {
+                a {
+                    display: block;
+                    height: 40px;
+                    line-height: 40px;
+                    color: #666;
+                    padding: 0 15px;
+                    position: absolute;
+                    z-index: 1000;
+                    top: 62px;
+                    left: 368px;
+                    padding: 10px 0;
+                }
+                i {
+                    background: url(../images/allicon.png) 0 0 no-repeat;
+                    background-size: 64px 64px;
+                    width: 14px;
+                    height: 14px;
+                    display: inline-block;
+                    margin-right: 10px !important;
+                }
+                i.kck-icon {
+                    background-position: 0 -13px;
+                }
+                i.zyljt-icon {
+                    background-position: -45px 0;
+                }
+                i.zstxt-icon {
+                    background-position: -30px -13px;
+                }
+                i.xlkc-icon {
+                    background-position: -30px -13px;
+                }
+                i.kcbq-icon {
+                    background-position: -15px -13px;
+                }
+                i.vip-icon {
+                    background-position: -16px 0;
+                }
+                span {
+                    float: right;
+                    color: #bbb;
+                }
+            }
+            /*下拉列表样式*/
+            .submenu {
+                display: none;
+                background: #fff;
+                font-size: 12px;
+                color: #666;
+                width: 280px;
+                text-align: left;
+                h3 {
+                    margin: 10px 0;
+                    padding: 0 15px;
+                    background: #fafafa;
+                    height: 28px;
+                    line-height: 28px;
+                    font-weight: 300;
+                }
+                /*滑动效果*/
+                a {
+                    &:hover {
+                        color: #35b558;
+                    }
+                }
+            }
+            /*左侧标签样式*/
+            li {
+                float: left;
+                font-size: 14px;
+                height: 60px;
+                text-align: center;
+                margin-right: 50px;
+                cursor: pointer;
+                /*箭头样式*/
+                .arrow-icon {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    border-top: 1px solid #c1c1c1;
+                    border-left: 1px solid #c1c1c1;
+                    transform: rotate(-135deg);
+                    -webkit-transform: rotate(-135deg);
+                    -moz-transform: rotate(-135deg);
+                    -ms-transform: rotate(-135deg);
+                    transform-origin: 4px 4px;
+                    margin-left: 5px;
+                    margin-bottom: 2px;
+                }
+                /*首个标签样式*/
+                a.first {
+                    color: rgb(53, 181, 88);
+                }
+                &:hover {
+                    /*标签滑动颜色效果*/
+                    color: rgb(53, 181, 88);
+                    /*NAV区域三角形效果*/
+                    .arrow-icon {
+                        border-color: rgb(53, 181, 88);
+                        animation: arrow_animation 0.5s ease-out forwards;
+                        -moz-animation: arrow_animation 0.5s ease-out forwards;
+                        -webkit-animation: arrow_animation 0.5s ease-out forwards;
+                    }
+                    /*下拉列表显示控制*/
+                    .submenu {
+                        display: block;
+                    }
+                }
+            }
+        }
+        /*右侧区域样式*/
+        .nav-right {
+            float: right;
+            text-align: right;
+            width: 200px;
+            margin-right: 10px;
+            height: 60px;
+            span {
+                display: inline-block;
+                height: 60px;
+                width: 17px;
+                margin-left: 25px;
+                cursor: pointer;
+            }
+            span.icon-search {
+                background: url("../images/search-icon.png") 0 0 no-repeat;
+                background-size: 17px 17px;
+                background-position: 0, 0;
+            }
+            span.icon-login {
+                background: url("../images/login-icon.png") 0 0 no-repeat;
+                background-size: 17px;
+                background-position: 0;
+                .xxzx-icon {
+                    background-position: -16px -15px;
+                }
+                .grzy-icon {
+                    background-position: -45px -1px;
+                }
+                .xxtz-icon {
+                    background-position: -16px -30px;
+                }
+                .zhsz-icon {
+                    background-position: -30px -1px;
+                }
+                .submenu {
+                    display: none;
+                    padding: 10px 0;
+                    background: #fff;
+                    position: absolute;
+                    width: 120px;
+                    z-index: 1200;
+                    top: 61px;
+                    right: 3px;
+                    .top-icon {
+                        display: block;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        position: absolute;
+                        top: -8px;
+                        right: 8px;
+                        width: 15px;
+                        height: 15px;
+                        border-top: 1px solid #ececec;
+                        border-left: 1px solid #ececec;
+                        background: #fff;
+                    }
+                    dd {
+                        text-align: left;
+                        font-size: 12px;
+                        line-height: 35px;
+                        vertical-align: middle;
+                        margin: 0;
+                        padding-left: 10px;
+                        i {
+                            background: url("http://e.jikexueyuan.com/headerandfooter/images/allicon2.png") 0 0 no-repeat;
+                            background-size: 64px 64px;
+                            width: 12px;
+                            height: 12px;
+                            margin-right: 10px;
+                            display: inline-block;
+                        }
+                        .reg-btn,
+                        .login-btn {
+                            display: inline-block;
+                            text-align: center;
+                            width: 45%;
+                            height: 35px;
+                            line-height: 35px;
+                        }
+                        a {
+                            &:hover {
+                                background: #f5f5f5;
+                                color: #35b558;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .submenu {
+                        display: block;
+                    }
+                }
+            }
+            span.icon-app {
+                background: url("../images/app-icon.png") 0 0 no-repeat;
+                background-size: 17px;
+                background-position: 0;
+                .submenu {
+                    position: absolute;
+                    display: none;
+                    padding: 0;
+                    background: #fff;
+                    width: 120px;
+                    z-index: 1200;
+                    top: 61px;
+                    right: 5px;
+                    img {
+                        width: 100%;
+                    }
+                    .top-icon {
+                        display: block;
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                        -moz-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                        position: absolute;
+                        top: -8px;
+                        right: 52px;
+                        width: 15px;
+                        height: 15px;
+                        border-top: 1px solid #ececec;
+                        border-left: 1px solid #ececec;
+                        background: #fff;
+                    }
+                }
+                &:hover {
+                    background: url("../images/app-icon2.png") 0 0 no-repeat;
+                    background-size: 17px;
+                    background-position: 0;
+                    .submenu {
+                        display: block;
+                    }
+                }
+            }
+        }
+        ul {
+            list-style: none;
+        }
+        /*首页LOGO框*/
+        .logo {
+            width: 109px;
+            margin-right: 60px;
+            height: 60px;
+            float: left;
+            /*首页LOGO图片*/
+            img {
+                float: left;
+                width: 109px;
+                margin-top: 10px;
+                border: 0 none;
+            }
+        }
+    }
+    a {
+        .header-aih3;
+    }
+    i {
+        .header-aih3;
+    }
+    h3 {
+        .header-aih3;
+    }
+}
+
+#shequ {
+    z-index: 1000;
+    top: 62px;
+    left: 485px;
+}
