@@ -1,0 +1,107 @@
+//设置ul的尺寸
+.ulsizing(@width: 260px, @height: 180px, @border: 2px, @margin: 15px) {
+    width: @width;
+    height: @height;
+    border: @border solid red;
+    margin: @margin;
+    list-style: none;
+}
+
+//设置li的尺寸
+.lisizing(@font-size: 11px, @width: 12px, @height: 80px, @margin-top: 5px) {
+    font-size: @font-size;
+    //固定宽度使文字强制换行竖直排列
+    width: @width;
+    height: @height;
+    margin-top: @margin-top;
+}
+
+//设置ul的弹性盒子
+.ulbox() {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+}
+
+//设置li的弹性盒子
+.libox() {
+    //定义li的flex伸缩盒
+    display: -webkit-flex;
+    display: flex;
+    //设置伸缩盒的子元素向两端对齐
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    //设置子元素的排列方向是竖直方向
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    //即每个li的子元素span为竖直方向的两端对齐
+}
+
+@stagewidth:200px;
+
+.stage {
+    position: relative;
+    color: red;
+    .stageno {
+        position: absolute;
+        left: 26px;
+        top: 8px;
+        span {
+            font-size: 30px
+        }
+    }
+    .stagename {
+        position: absolute;
+        left: 30px;
+        top: 48px;
+        width: 31px;
+        .libox();
+        span {
+            font-size: 30px
+        }
+    }
+    ul {
+        color: black;
+        list-style: none;
+        padding-left: 80px;
+        padding-right: 20px;
+        position: relative;
+        .ulsizing();
+        .ulbox();
+        li {
+            .lisizing();
+            .libox();
+        }
+        .located{
+        	color:red;
+        }
+        .direct {
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            .direct-line {
+                border-bottom: 2px solid red;
+                width: @stagewidth;
+            }
+            .direct-stage {
+                font-size: 20px;
+                text-align: center;
+                padding-bottom: 10px;
+            }
+            .triangle_border_right {
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: 32px;
+                right: -9px;
+                border-width: 5px 0 5px 20px;
+                border-style: solid;
+                border-color: transparent transparent transparent #ea1111;
+            }
+        }
+    }
+}
